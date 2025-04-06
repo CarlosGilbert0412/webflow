@@ -1,70 +1,3 @@
-<div id="estacion-marquee" class="marquee-container">
-  <div class="marquee-text" id="texto-marquee"></div>
-</div>
-
-<!-- Columnas para las especies y las fechas -->
-<div id="species-colum-1" class="species-column"></div>
-<div id="date-colum-1" class="date-column"></div>
-
-<div id="species-colum-2" class="species-column"></div>
-<div id="date-colum-2" class="date-column"></div>
-
-<div id="species-colum-3" class="species-column"></div>
-<div id="date-colum-3" class="date-column"></div>
-
-<div id="species-colum-4" class="species-column"></div>
-<div id="date-colum-4" class="date-column"></div>
-
-<style>
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-  }
-
-  .marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scrollLeft 55s linear infinite;
-    font-size: 16px;
-    padding-left: 100%;
-    box-sizing: content-box;
-  }
-
-  @keyframes scrollLeft {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  .species-column, .date-column {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%; /* Controla el ancho de cada columna */
-    margin: 10px;
-  }
-
-  /* Estilo para las especies */
-  .species-column {
-    font-size: 16px;
-    padding: 5px;
-    text-align: left;
-  }
-
-  /* Estilo para las fechas */
-  .date-column {
-    font-size: 16px;
-    padding: 5px;
-    text-align: right;
-  }
-
-  /* Colapsar las columnas que no contienen contenido */
-  .species-column:empty, .date-column:empty {
-    display: none;
-  }
-</style>
-
-<script>
 document.addEventListener("DOMContentLoaded", function () {
   const texto = document.getElementById("texto-marquee");
   const now = new Date();
@@ -215,4 +148,3 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarFechas = !mostrarFechas;
   }, 3000);
 });
-</script>
